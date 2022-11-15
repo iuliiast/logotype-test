@@ -1,0 +1,252 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+:root{
+		font-family: "Roboto", sans-serif;
+		color: black;
+		font-size: 12px;
+		font-synthesis: none;
+		text-rendering: optimizeLegibility;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-text-size-adjust: 100%;
+}
+
+/* Reset */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+	min-width: 320px;
+	min-height: 100vh;
+}
+.body_hidden {
+	background-color: rgba(207, 207, 207, 0.323);
+}
+
+.wrapper {
+	max-width: 1160px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media screen and (max-width: 1100px) {
+	.wrapper {
+		max-width: 768px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.wrapper {
+		max-width: 320px;
+	}
+}
+
+a{
+	text-decoration: none;
+}
+
+/* Header */
+header {
+	height: 200px;
+}
+
+@media screen and (max-width: 768px) {
+	header {
+		height: auto;
+	}
+}
+
+.header__logo {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 2.41rem;
+	padding-bottom: 2.41rem;
+	align-items: center;
+}
+
+.check {
+	display: none;
+}
+
+
+.burger_menu {
+	/*Hide burger menu*/
+	opacity: 0;
+	pointer-events: none;
+}
+
+@media screen and (max-width: 768px) {
+	.burger_menu {
+		opacity: 1;
+		pointer-events: auto;
+	}
+	.header__nav {
+		display: none;
+	}
+}
+
+.header__nav {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+
+	.header__nav__mobile_title {
+		display: none;
+	}
+
+	.header__menu__list {
+		display: flex;
+		border-top: 1px solid #E9E9E9;
+		border-bottom: 1px solid #E9E9E9;
+		justify-content: center;
+		list-style: none;
+	}
+
+	.header__menu__link {
+		margin-right: 1.5rem;
+		display: flex;
+		padding-top: 1.79rem;
+		padding-bottom: 1.79rem;
+		a {
+			font-size: 1.33rem;
+			font-weight: 500;
+			color: #000000;
+		}
+		img {
+			max-width: 10px;
+			padding-left: 0.33rem;
+		}
+	}
+
+	.header__menu__dropdown {
+    display: none;
+    position: absolute;
+		list-style: none;
+		border: 1px solid #E9E9E9;
+		margin-top: 3.4rem;
+		background: #FFFFFF;
+		padding: 1.66rem;
+		width: 11.25rem;
+		li {
+			display: flex;
+			justify-content: space-between;
+			font-size: 1.08rem;
+			padding: 0.6rem 0;
+			border-bottom: 1px solid #E9E9E9;
+			&:first-child {
+				padding-top: 0;
+			}
+			&:last-child {
+				border: 0;
+				padding-bottom: 0;
+			}
+			&:hover {
+				color: #969696;
+				cursor: pointer;
+				padding-left: 0.5rem;
+
+			}
+
+		}
+	}
+	.header__menu__link:hover .header__menu__dropdown {
+    display: block;
+  }
+}
+
+/* Nav Mobile */
+@media screen and (max-width: 768px) {
+	.header__nav__mobile {
+		display: block;
+		position: fixed;
+		z-index: 100;
+		border: 1px solid #E9E9E9;
+		background: #FFFFFF;
+    max-height: 100vh;
+		transition: 0.5s;
+		transform: translateX(-100%);
+
+		.header__nav__mobile_title {
+			display: flex;
+			justify-content: space-between;
+			background: #FFFFFF;
+			border-bottom: 1px solid #E9E9E9;
+			padding: 2.12rem 1.5rem 2.12rem 1rem;
+		}
+
+		.header__menu__list {
+			min-height: 100vh;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			list-style: none;
+			border-top: 0;
+			padding-left: 1rem;
+			width: 25rem;
+		}
+	
+		.header__menu__link {
+			display: flex;
+			padding-top: 1.79rem;
+			padding-bottom: 1.79rem;
+			border-bottom: 1px solid #E9E9E9;
+		}
+
+		.header__menu__link:hover .header__menu__dropdown {
+			display: none;
+		}
+	}
+	.is_open {
+		transform: translateX(0%); /* show it */
+	}
+}
+
+/*Main - Articles*/
+.articles {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+article {
+	max-width: 360px;
+	margin-bottom: 48px;
+	img {
+		width: 100%;
+		max-height: 230px;
+		object-fit: cover;
+	}
+	a {
+		color: #EB0028;
+		font-size: 1.08rem;
+		font-weight: 700;
+	}
+	h1 {
+		font-size: 2rem;
+		margin-top: 1.33rem;
+		margin-bottom: 1.33rem;
+	}
+	.article__details {
+		margin-top: 1.33rem;
+	}
+	.article__author {
+		font-weight: 700;
+		padding-right: 0.41rem;
+	}
+	.article__date,
+	.article__views {
+		color: #9B9B9B;
+		padding-right: 0.41rem;
+	}
+	.article__text {
+		color: #929292;
+		margin-top: 1.33rem;
+	}
+}
+
+footer {
+	height: 9.75rem;
+}
